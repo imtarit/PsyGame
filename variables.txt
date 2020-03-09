@@ -1,0 +1,1 @@
+{"amplitude": 100, "length": 50.0, "slow": 10, "randDelay": 1000, "randLevelY": 0, "randLevelX": 0, "partcleSize": 20}
