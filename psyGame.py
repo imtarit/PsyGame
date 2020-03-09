@@ -98,10 +98,6 @@ with open("variables.txt", "w") as file:
 particleFieldnames = ['subjectID', 'block', 'trial', 'randDelay', 'randLevelX',
 'randLevelY', 'partcleSize','xPos', 'yPos']
 filename = 'particle_result.csv'
-if not os.path.exists(filename):
-    with open(filename, mode='w', newline='') as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
-        writer.writeheader()
 result = {'subjectID':subjectID, 'block':0, 'trial':0, 
 'randDelay':randDelay,'randLevelX':randLevelX,'randLevelY':randLevelY,
 'partcleSize':partcleSize,'xPos':0,'yPos':0}
@@ -110,6 +106,10 @@ for i in range(particleNumber):
     keyTextY = 'Particle_'+str(i)+'_Y'
     result.update({keyTextX:float('nan'),keyTextY:float('nan')})
     particleFieldnames = particleFieldnames+[keyTextX,keyTextY]
+if not os.path.exists(filename):
+    with open(filename, mode='w', newline='') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
+        writer.writeheader()
 
 
 RTFieldnames = ['subjectID', 'block', 'trial', 'trialLen', 'RTTime', 'trialTime', 
