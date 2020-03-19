@@ -270,7 +270,7 @@ while running:
                 'randDelay':randDelay, 'randLevelX':randLevelX,
                 'randLevelY':randLevelY, 'partcleSize':partcleSize,
                 'xPos':courserPos[0],'yPos':courserPos[1]})
-                with open('particle_result.csv', mode='a', newline='') as csv_file:
+                with open(particleFilename, mode='a', newline='') as csv_file:
                     writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
                     writer.writerow(result)
                 show_trial(blockCureent,trialcurrent)
@@ -284,7 +284,7 @@ while running:
                 t0 = currentTime
                 trialStart = True
                 totalScore += score
-                with open('RT_result.csv', mode='a', newline='') as csv_file:
+                with open(RTFilename, mode='a', newline='') as csv_file:
                     writer = csv.DictWriter(csv_file, fieldnames=RTFieldnames)
                     writer.writerow(RTResult)
 
