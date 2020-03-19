@@ -6,6 +6,7 @@ import time, os
 from random import randint
 import csv, json
 import pygame_textinput
+from datetime import datetime
 
 pygame.init()
 random.seed(a=0.2, version=2)
@@ -189,7 +190,23 @@ while running:
             print('Subject ID: '+ subjectID)
             nextPage = True
             startPage = False
-            
+            dateTime = datetime.now()
+            particleFilename = (subjectID + "_particle_result_" + str(dateTime.year) + 
+            str(dateTime.month) + str(dateTime.day) + str(dateTime.hour) 
+            + str(dateTime.minute) + str(dateTime.second) + ".csv")
+            RTFilename = (subjectID + "_RT_result_" + str(dateTime.year) + 
+            str(dateTime.month) + str(dateTime.day) + str(dateTime.hour) 
+            + str(dateTime.minute) + str(dateTime.second) + ".csv")
+            print(particleFilename)
+            print(RTFilename)
+            if not os.path.exists(filename):
+                with open(filename, mode='w', newline='') as csv_file:
+                    writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
+                    writer.writeheader()
+
+
+
+ 
         clock.tick(30)
         
 
