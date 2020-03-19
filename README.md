@@ -7,7 +7,7 @@
 python psyGame.py
 ````
 ## File list
-### icon.jpg
+### icon.jpg[./icon.jpg]
 Icon of the software
 ### psyGame.py
 Main executable file
