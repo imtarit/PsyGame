@@ -102,7 +102,6 @@ with open("variables.txt", "w") as file:
 
 particleFieldnames = ['subjectID', 'block', 'trial', 'randDelay', 'randLevelX',
 'randLevelY', 'partcleSize','xPos', 'yPos']
-filename = 'particle_result.csv'
 result = {'subjectID':subjectID, 'block':0, 'trial':0, 
 'randDelay':randDelay,'randLevelX':randLevelX,'randLevelY':randLevelY,
 'partcleSize':partcleSize,'xPos':0,'yPos':0}
@@ -114,12 +113,9 @@ for i in range(particleNumber):
 
 
 
-RTFieldnames = ['subjectID', 'block', 'trial', 'trialLen', 'RTTime', 'trialTime', 
+RTFieldnames = ['subjectID', 'block', 'trial', 'trialLen', 'DRTAStart', 'DRTAEnd', 'RTTime', 'trialTime', 
 'trialScore']
-filename = 'RT_result.csv'
-
-
-RTResult = {'subjectID':subjectID, 'block':0, 'trial':0, 'trialLen':0.0, 'RTTime':0.0,
+RTResult = {'subjectID':subjectID, 'block':0, 'trial':0, 'trialLen':0.0, 'DRTAStart':0.0, 'DRTAEnd':0.0, 'RTTime':0.0,
 'trialTime':0.0, 'trialScore':0}
 
 
@@ -278,7 +274,8 @@ while running:
                 # click = 0
             else:
                 RTResult.update({'subjectID':subjectID, 'block':blockCureent, 'trial':trialcurrent, 
-                'trialLen':trialLength, 'RTTime':responseTime, 'trialTime': trialTime, 'trialScore':score})
+                'trialLen':trialLength, 'DRTAStart':DRTAStartTime, 'DRTAEnd':DRStopTime, 
+                'RTTime':responseTime, 'trialTime': trialTime, 'trialScore':score})
                 trialcurrent += 1
                 particleList = list(range(particleNumber))
                 t0 = currentTime
