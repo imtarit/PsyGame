@@ -110,19 +110,19 @@ for i in range(particleNumber):
     keyTextY = 'Particle_'+str(i)+'_Y'
     result.update({keyTextX:float('nan'),keyTextY:float('nan')})
     particleFieldnames = particleFieldnames+[keyTextX,keyTextY]
-# if not os.path.exists(filename):
-#     with open(filename, mode='w', newline='') as csv_file:
-#         writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
-#         writer.writeheader()
+if not os.path.exists(filename):
+    with open(filename, mode='w', newline='') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
+        writer.writeheader()
 
 
 RTFieldnames = ['subjectID', 'block', 'trial', 'trialLen', 'RTTime', 'trialTime', 
 'trialScore']
-# filename = 'RT_result.csv'
-# if not os.path.exists(filename):
-#     with open(filename, mode='w', newline='') as csv_file:
-#         writer = csv.DictWriter(csv_file, fieldnames=RTFieldnames)
-#         writer.writeheader()
+filename = 'RT_result.csv'
+if not os.path.exists(filename):
+    with open(filename, mode='w', newline='') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=RTFieldnames)
+        writer.writeheader()
 
 RTResult = {'subjectID':subjectID, 'block':0, 'trial':0, 'trialLen':0.0, 'RTTime':0.0,
 'trialTime':0.0, 'trialScore':0}
