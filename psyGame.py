@@ -111,19 +111,13 @@ for i in range(particleNumber):
     keyTextY = 'Particle_'+str(i)+'_Y'
     result.update({keyTextX:float('nan'),keyTextY:float('nan')})
     particleFieldnames = particleFieldnames+[keyTextX,keyTextY]
-if not os.path.exists(filename):
-    with open(filename, mode='w', newline='') as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
-        writer.writeheader()
+
 
 
 RTFieldnames = ['subjectID', 'block', 'trial', 'trialLen', 'RTTime', 'trialTime', 
 'trialScore']
 filename = 'RT_result.csv'
-if not os.path.exists(filename):
-    with open(filename, mode='w', newline='') as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=RTFieldnames)
-        writer.writeheader()
+
 
 RTResult = {'subjectID':subjectID, 'block':0, 'trial':0, 'trialLen':0.0, 'RTTime':0.0,
 'trialTime':0.0, 'trialScore':0}
@@ -201,9 +195,7 @@ while running:
             RTFilename = (subjectID + "_RT_result_" + str(dateTime.year) + 
             str(dateTime.month) + str(dateTime.day) + str(dateTime.hour) 
             + str(dateTime.minute) + str(dateTime.second) + ".csv")
-            print(particleFilename)
-            print(RTFilename)
-            
+        
             if not os.path.exists(particleFilename):
                 with open(particleFilename, mode='w', newline='') as csv_file:
                     writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
@@ -229,14 +221,15 @@ while running:
             trialStart = False
             responseTime = float('nan')
             trialLength = get_trial_length()
+            print()
             score = 0
             RTSet = False
             DRTAStartTime = get_DRTA_start()
-            print(DRTAStartTime)
+            DRStopTime = DRTAStartTime +1
         if trialcurrent <= trialNumber:
             result['trial'] = trialcurrent
             trialTime = currentTime-trialStartTime
-            if trialTime < 1:
+            if trialTime >= DRTAStartTime and trialTime < DRStopTime:
                 surface.fill((50,50,50))
             for i in range(particleNumber):
                 keyTextX = 'Particle_'+str(i)+'_X'
