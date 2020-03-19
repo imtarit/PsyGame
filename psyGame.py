@@ -159,6 +159,7 @@ while running:
                 nextPage = False
                 t0 = currentTime
                 tm = t0
+                trialStart = True
             elif event.key == pygame.K_SPACE and (trialTime > 0 and RTSet == False):
                 responseTime = trialTime
                 RTSet = True
@@ -206,9 +207,6 @@ while running:
                     writer = csv.DictWriter(csv_file, fieldnames=RTFieldnames)
                     writer.writeheader()
 
-
-
- 
         clock.tick(30)
         
 
@@ -221,7 +219,6 @@ while running:
             trialStart = False
             responseTime = float('nan')
             trialLength = get_trial_length()
-            print()
             score = 0
             RTSet = False
             DRTAStartTime = get_DRTA_start()
