@@ -25,7 +25,7 @@ Difficulty variables. Can be changed during execution. Variable list:
 
 ### Output files
  
-####\(SubID\)_particle_result_\(DateTime\) 
+#### \(SubID\)_particle_result_\(DateTime\) 
 Columns:
 * subjectID: Subject ID
 * block: Current block number
@@ -39,7 +39,7 @@ Columns:
 * Particle_(num)_X: X coordinate of	particle number (num). If the particle is touched then the coordinate is 'nan'.
 * Particle_(num)_Y: Y coordinate of	particle number (num). If the particle is touched then the coordinate is 'nan'.
 
-####\(SubID\)_particle_result_\(DateTime\)
+#### \(SubID\)_particle_result_\(DateTime\)
 Columns: 
 * subjectID: Subject ID
 * block: block number of current trial
