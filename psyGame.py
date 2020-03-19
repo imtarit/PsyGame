@@ -68,6 +68,10 @@ def get_trial_length():
     trialLength = random.uniform(3,5)
     return trialLength
 
+def get_DRTA_start():
+    DRTAStart = random.uniform(0.5,2)
+    return DRTAStart
+
 
 
 ## Configs
@@ -227,6 +231,8 @@ while running:
             trialLength = get_trial_length()
             score = 0
             RTSet = False
+            DRTAStartTime = get_DRTA_start()
+            print(DRTAStartTime)
         if trialcurrent <= trialNumber:
             result['trial'] = trialcurrent
             trialTime = currentTime-trialStartTime
