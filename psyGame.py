@@ -199,9 +199,15 @@ while running:
             + str(dateTime.minute) + str(dateTime.second) + ".csv")
             print(particleFilename)
             print(RTFilename)
-            if not os.path.exists(filename):
-                with open(filename, mode='w', newline='') as csv_file:
+            
+            if not os.path.exists(particleFilename):
+                with open(particleFilename, mode='w', newline='') as csv_file:
                     writer = csv.DictWriter(csv_file, fieldnames=particleFieldnames)
+                    writer.writeheader()
+            
+            if not os.path.exists(RTFilename):
+                with open(RTFilename, mode='w', newline='') as csv_file:
+                    writer = csv.DictWriter(csv_file, fieldnames=RTFieldnames)
                     writer.writeheader()
 
 
