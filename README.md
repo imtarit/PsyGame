@@ -9,11 +9,11 @@ python psyGame.py
 ## File list
 ### [icon.jpg](./icon.jpg)
 Icon of the software
-### psyGame.py
+### [psyGame.py](./psyGame.py)
 Main executable file
-### pygame_textinput.py
+### [pygame_textinput.py](./pygame_textinput.py
 Module for text input through pygame
-### variables.txt
+### [variables.txt](./variables.txt)
 Difficulty variables. Can be changed during execution. Variable list:
 * amplitude: Amplitude of the sin wave of the particle path
 * length: Wave length of the sin wave
@@ -24,7 +24,7 @@ Difficulty variables. Can be changed during execution. Variable list:
 * PartcleSize: Size of the particles in pixel
 
 ### Output files 
-#### (SubID)_particle_result_(DateTime) 
+####/(SubID/)_particle_result_/(DateTime/) 
 Columns:
 * subjectID: Subject ID
 * block: Current block number
@@ -38,7 +38,7 @@ Columns:
 * Particle_(num)_X: X coordinate of	particle number (num). If the particle is touched then the coordinate is 'nan'.
 * Particle_(num)_Y: Y coordinate of	particle number (num). If the particle is touched then the coordinate is 'nan'.
 
-#### (SubID)_particle_result_(DateTime)
+####/(SubID/)_particle_result_/(DateTime/)
 Columns: 
 * subjectID: Subject ID
 * block: block number of current trial
