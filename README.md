@@ -13,6 +13,7 @@ python psyGame.py
 * variables.txt -> Difficulty variables. Can be changed during execution
 
 ### Output files 
-* <Sub_ID>_particle_result_<DateTime> -> Difficulty variable, particle postions, and corsour postion during each frame
+* <SubID>_particle_result_<DateTime> -> 
+Difficulty variable, particle postions, and corsour postion during each frame
 * RT_result.csv -> trial length, trial time, DRTA time and response time in each trial.
  
