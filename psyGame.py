@@ -244,6 +244,7 @@ while running:
                 randActive = False
                 if (tn-tm)*1000 > randDelay:
                     randActive = True
+                collisionList = []
                 for i in particleList:
                     if randActive:
                         randY[i] = randint(0,randLevelY)
@@ -261,8 +262,11 @@ while running:
                     # if click == 1:
                     collision = isCollision(ranparticleX,ranparticleY,courserPos[0],courserPos[1])
                     if collision:
-                        particleList.remove(i)
+                        collisionList = i
                         score += 1
+                if collisionList in particleList:
+                    particleList.remove(collisionList)
+                
                 if randActive:
                     tm = tn
                     randActive = False
