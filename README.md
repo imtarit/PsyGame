@@ -13,7 +13,23 @@ python psyGame.py
 * variables.txt -> Difficulty variables. Can be changed during execution
 
 ### Output files 
-* (SubID)_particle_result_(DateTime) ->
-Difficulty variable, particle postions, and corsour postion during each frame
+#### (SubID)_particle_result_(DateTime) 
+ Columns:
+* subjectID: 		Subject ID
+* block: 			Current block number
+* trial: 			Current trial number
+* randDelay: 		Delay between random coordinates of particles change
+* randLevelX: 		Highest random range of value added to X coordinates of particles
+* randLevelY:   	Highest random range of value added to Y coordinates of particles
+* PartcleSize:		Size of the particles in pixel
+* xPos:				Position of the coursour in X axis.
+* yPos:				Position of the coursour in Y axis.
+* Particle_(num)_X:	
+
+
+
+
+
+
 * RT_result.csv -> trial length, trial time, DRTA time and response time in each trial.
  
